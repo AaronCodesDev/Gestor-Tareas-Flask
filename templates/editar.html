@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Tarea</title>
+    <!-- Hoja de estilo propia -->
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'main.css') }}">
+
+    <!-- Tema de Bootswatch -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/litera/bootstrap.min.css" integrity="sha384-enpDwFISL6M3ZGZ50Tjo8m65q06uLVnyvkFO3rsoW0UC15ATBFz3QEhr3hmxpYsn" crossorigin="anonymous">    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- CSS Personalizado -->
+    <style>
+        <style>
+        body {
+            background-color: #f8f9fa; /* Cambia el color de fondo del cuerpo */
+        }
+        #.card {
+        #    background-color: #ffffff; /* Cambia el color de fondo de la tarjeta */
+        }
+        .btn-primary {
+            background-color: #1859af; /* Cambia el color de fondo del botón primario */
+            border-color: #3c3ce5; /* Cambia el borde del botón primario */
+        }
+        .btn-primary:hover {
+            background-color: #0492ac; /* Cambia el color de fondo del botón primario en hover */
+            border-color: #240b36; /* Cambia el borde del botón primario en hover */
+        }
+
+
+        .form-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Espacio entre los botones */
+        }
+        .form-control {
+            margin-top: 10px;
+            margin-bottom: 15px; /* Espacio debajo del campo de texto */
+        }
+    </style>
+</head>
+<body>
+    <main class="container p-4">
+        <h1 class="display-4 text-center mt-4 titulo">Editar Tarea</h1>
+        <div class="row">
+            <div class="col-md-4 offset-md-4 my-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <form action="{{ url_for('editar', id=tarea.id) }}" method="post">
+                            <div class="form-group">
+                               <div class="current-text">Tarea actual: {{ tarea.contenido }}</div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="contenido_tarea" value="" placeholder="Editar Tarea" class="form-control" autofocus required>
+                            </div>
+                            <div class="form-buttons">
+                                <button type="submit" class="btn btn-primary d-block w-100">Guardar Cambios</button>
+                                <a class="btn btn-primary d-block w-100" href="/" role="button">Volver</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
