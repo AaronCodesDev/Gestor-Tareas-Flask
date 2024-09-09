@@ -49,13 +49,13 @@ Un gestor de tareas sencillo y eficiente, desarrollado en Python utilizando Flas
 Clona este repositorio:
 
 ```bash
-git clone https://github.com/MrFantan/GestorDeTareasFlask.git
+git clone https://github.com/MrFantan/Gestor-Tareas-Flask.git
 ```
 
 Accede al directorio del proyecto:
 
 ```bash
-cd GestorDeTareasFlask
+cd Gestor-Tareas-Flask
 ```
 
 Crea y activa tu entorno virtual:
