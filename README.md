@@ -55,7 +55,7 @@ git clone https://github.com/MrFantan/GestorDeTareasFlask.git
 Accede al directorio del proyecto:
 
 ```bash
-cd gestor-de-tareas
+cd GestorDeTareasFlask
 ```
 
 Crea y activa tu entorno virtual:
