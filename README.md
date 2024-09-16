@@ -24,23 +24,30 @@ Un gestor de tareas sencillo y eficiente, desarrollado en Python utilizando Flas
 
 ### Vista Categorias
 
-![Tarea Completada](/assets/categoria.png)
+![Tarea_Ctegoria](/assets/categoria.png)
 
 ### Vista Check
 
-![Tarea Completada](/assets/check.png)
+![Tarea_Check](/assets/check.png)
 
 ### Vista Editar
 
-![Tarea Completada](/assets/editar.png)
+![Tarea Editar](/assets/editar.png)
 
 ### Vista Pendientes
 
-![Tarea Completada](/assets/pendientes.png)
+![Tarea Pendiente](/assets/pendientes.png)
 
 ### Vista Pendientes check
 
-![Tarea Completada](/assets/pendientes-check.png)
+![Tarea Pendiente_Check](/assets/pendientes-check.png)
+
+### Base de datos
+
+![Tarea Base_Datos](/assets/db1.png)
+
+![Tarea Base_Datos](/assets/db2.png)
+
 ---
 
 ## Stack Tecnológico
