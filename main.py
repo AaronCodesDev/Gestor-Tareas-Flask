@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import db
 from models import Tarea
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -9,11 +10,16 @@ def home():
     todas_las_tareas = db.session.query(Tarea).all()
     return render_template('index.html', lista_de_tareas=todas_las_tareas)
 
-
 @app.route('/crear-tarea', methods=['POST'])
 def crear():
-    tarea = Tarea(contenido=request.form['contenido_tarea'], hecha=False, categoria = request.form['contenido_categoria'])
-    print('bg_'+request.form['contenido_categoria'])
+    fecha_limite = datetime.strptime(request.form['fecha_limite'], '%Y-%m-%d')  # Parsear la fecha
+
+    tarea = Tarea(
+        contenido=request.form['contenido_tarea'],
+        hecha=False,
+        categoria=request.form['contenido_categoria'],
+        fecha_limite=fecha_limite
+    )
     db.session.add(tarea)
     db.session.commit()
     return redirect(url_for('home'))
@@ -44,6 +50,19 @@ def editar(id):
         return redirect(url_for('home'))
 
     return render_template('editar.html', tarea=tarea)
+
+@app.route('/visualizar', methods=['GET'])
+def visualizar():
+    todas_las_tareas = db.session.query(Tarea).all()
+    fecha_actual = datetime.now()
+
+    # Calculamos los días restantes para cada tarea
+    tareas_con_dias_restantes = []
+    for tarea in todas_las_tareas:
+        dias_restantes = (tarea.fecha_limite - fecha_actual).days
+        tareas_con_dias_restantes.append((tarea, dias_restantes))
+
+    return render_template('visualizar.html', lista_de_tareas=tareas_con_dias_restantes)
 
 @app.route('/eliminar-tarea/<int:id>')
 def eliminar(id):

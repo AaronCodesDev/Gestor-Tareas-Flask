@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestor de Tareas</title>
+    <!-- Hoja de estilo personalizada -->
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'main.css') }}">
+
+    <!-- Tema de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/litera/bootstrap.min.css" integrity="sha384-enpDwFISL6M3ZGZ50Tjo8m65q06uLVnyvkFO3rsoW0UC15ATBFz3QEhr3hmxpYsn" crossorigin="anonymous">    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa; /* Cambia el color de fondo del cuerpo */
+        }
+        .card {
+            background-color: #ffffff; /* Cambia el color de fondo de la tarjeta */
+        }
+        .btn-primary {
+            background-color: #1859af; /* Cambia el color de fondo del botón primario */
+            border-color: #3c3ce5; /* Cambia el borde del botón primario */
+        }
+        .btn-primary:hover {
+            background-color: #0492ac; /* Cambia el color de fondo del botón primario en hover */
+            border-color: #240b36; /* Cambia el borde del botón primario en hover */
+        }
+
+        .form-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .form-control {
+            margin-bottom: 10px;
+        }
+    </style>
+    <!-- Posicionar iconos a la izquierda -->
+    <style>
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .iconos {
+            display: flex;
+            gap: 10px;
+        }
+        .tarea_hecha {
+            text-decoration: line-through;
+            color: #cfcfcf;
+        }
+    </style>
+</head>
+<body>
+    <main class="container p-4">
+        <h1 class="display-4 text-center mt-4 titulo">GESTIÓN DE TAREAS</h1>
+
+        <div class="row">
+            <div class="col-md-4 offset-md-4 my-auto"> <!-- Este div ocupará 4 columnas y estará centrado -->
+                <div class="card"> <!-- Creación del objeto card -->
+                    <div class="card-header">
+                        <p style="text-align: center;">TAREAS PENDIENTES</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            {% for tarea, dias_restantes in lista_de_tareas %}
+                            <li class="list-group-item {% if tarea.hecha %}tarea_hecha{% endif%}">
+                                {{ tarea.contenido }} - Días restantes: {{ dias_restantes }}
+                            </li>
+                            {% endfor %}
+                            <a class="btn btn-primary btn-block" href="/" role="button" style="margin-top: 20px;">Volver </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
