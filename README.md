@@ -8,6 +8,7 @@ Un gestor de tareas sencillo y eficiente, desarrollado en Python utilizando Flas
 
 - **Insertar una tarea**
 - **Seleccionar categoría** para la tarea (Casa, Escuela, Trabajo, Otros)
+- **Añadir fecha limite para tarea** ![edit-icon](https://img.shields.io/badge/-Calendario-orange?style=for-the-badge&logo=)
 - **Marcar tareas como completadas** ![check-icon](https://img.shields.io/badge/-Check-28a745?style=for-the-badge&logo=)
 - **Eliminar una tarea** ![delete-icon](https://img.shields.io/badge/-Eliminar-red?style=for-the-badge&logo=)
 - **Editar tareas** ![edit-icon](https://img.shields.io/badge/-Editar-blue?style=for-the-badge&logo=)
@@ -33,6 +34,13 @@ Un gestor de tareas sencillo y eficiente, desarrollado en Python utilizando Flas
 
 ![Tarea Completada](/assets/editar.png)
 
+### Vista Pendientes
+
+![Tarea Completada](/assets/pendientes.png)
+
+### Vista Pendientes check
+
+![Tarea Completada](/assets/pendientes-check.png)
 ---
 
 ## Stack Tecnológico
