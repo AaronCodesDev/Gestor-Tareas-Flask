@@ -102,7 +102,7 @@ http://127.0.0.1:5000
 
 ## Autor
 
-- [@MrFantan](https://www.github.com/MrFantan)
+- [@AaronCodesDev](https://www.github.com/AaronCodesDev)
 
 ---
 
